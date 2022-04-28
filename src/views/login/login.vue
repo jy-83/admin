@@ -1,5 +1,6 @@
 <template>
-  <div>登录页</div>
+  <div>{{ $store.state.user }}</div>
+  <el-button>按钮</el-button>
 </template>
 
 <script lang="ts">
