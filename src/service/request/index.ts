@@ -31,7 +31,7 @@ class JYRequest {
       (res) => {
         console.log("响应成功拦截");
         this.loading?.close();
-        return res.data.data;
+        return res;
       },
       (err) => {
         console.log("响应失败拦截");

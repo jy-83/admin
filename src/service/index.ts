@@ -13,7 +13,7 @@ const jyRequest = new JYRequest({
     },
     responseInterceptor: (response) => {
       console.log("配置的响应成功拦截");
-      return response;
+      return response.data.data;
     },
     responseInterceptorCatch: (err) => {
       console.log("配置的响应失败拦截");
@@ -21,27 +21,5 @@ const jyRequest = new JYRequest({
     }
   }
 });
-interface DataType {
-  id: number;
-  name: string;
-  token: string;
-}
-jyRequest
-  .request<DataType>({
-    url: "/login",
-    method: "post",
-    interceptors: {
-      requestInterceptor: (config) => {
-        console.log("接口的单独请求成功拦截");
-        return config;
-      }
-    },
-    showLoading: false,
-    data: {
-      name: "coderwhy",
-      password: "123456"
-    }
-  })
-  .then((res) => {
-    console.log(res.name);
-  });
+
+export default jyRequest;
