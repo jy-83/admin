@@ -2,6 +2,8 @@ import { createApp } from "vue";
 import ElementPlus from "element-plus";
 import "element-plus/theme-chalk/index.css";
 
+import "@/service";
+
 import App from "./App.vue";
 import router from "@/router/index";
 import store from "./store";
