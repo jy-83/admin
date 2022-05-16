@@ -1,3 +1,11 @@
+<!--
+ * @Author: jiangyi 189363638@qq.com
+ * @Date: 2022-05-11 16:41:54
+ * @LastEditors: jiangyi 189363638@qq.com
+ * @LastEditTime: 2022-05-16 11:23:15
+ * @FilePath: /admin/src/components/nav-menu/src/nav-menu.vue
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
 <template>
   <div class="nav-menu">
     <div class="logo">
@@ -30,9 +38,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from "vue";
-import { useStore } from "vuex";
+import { defineComponent } from "vue";
 import { useRouter } from "vue-router";
+import { menu } from "./config";
 
 export default defineComponent({
   props: {
@@ -42,8 +50,6 @@ export default defineComponent({
     }
   },
   setup() {
-    const store = useStore();
-    const menu = computed(() => store.state.login.menu);
     const router = useRouter();
     let active = router.currentRoute.value.path;
     return {
@@ -57,7 +63,7 @@ export default defineComponent({
 <style scoped lang="scss">
 .nav-menu {
   height: 100%;
-  background-color: $color-001529;
+  background-color: #001529;
   .logo {
     height: 48px;
     display: flex;

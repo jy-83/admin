@@ -30,6 +30,7 @@
 import { ElForm } from "element-plus";
 import { defineComponent, reactive, ref } from "vue";
 import { rules } from "../config/account-config";
+import { useRouter } from "vue-router";
 
 export default defineComponent({
   setup() {
@@ -38,10 +39,19 @@ export default defineComponent({
       password: ""
     });
     let formRef = ref<InstanceType<typeof ElForm>>();
+    const router = useRouter();
+    const login = () => {
+      formRef.value?.validate((value) => {
+        if (value) {
+          router.push("/main");
+        }
+      });
+    };
     return {
       form,
       rules,
-      formRef
+      formRef,
+      login
     };
   }
 });

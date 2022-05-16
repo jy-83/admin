@@ -55,7 +55,7 @@ export default defineComponent({
     const accountRef = ref<InstanceType<typeof LoginAccount>>();
     const phoneRef = ref<InstanceType<typeof LoginPhone>>();
     const loginClick = () => {
-      console.log("测试的");
+      accountRef.value?.login();
     };
     return {
       currentName,
