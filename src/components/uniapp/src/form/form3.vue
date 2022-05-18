@@ -28,8 +28,8 @@ export default defineComponent({
 .form3 {
   display: flex;
   align-items: center;
-  padding: $default 0;
-  margin: 0 $default;
+  padding: $distance 0;
+  margin: 0 $distance;
   border-bottom: 1px solid $color-border;
   .label {
     flex-shrink: 0;

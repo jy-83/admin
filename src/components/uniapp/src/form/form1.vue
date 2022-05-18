@@ -25,8 +25,8 @@ export default defineComponent({
 
 <style scoped lang="scss">
 .form1 {
-  margin: 0 $default;
-  padding: $default 0;
+  margin: 0 $distance;
+  padding: $distance 0;
   .label {
     flex-shrink: 0;
     width: 100px;

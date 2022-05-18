@@ -49,7 +49,10 @@
             </el-container>
           </el-aside>
           <el-main class="mainChild">
-            <div class="editor scroll">
+            <div
+              class="editor scroll"
+              :class="{ editorHas: pageJson.background }"
+            >
               <VueDraggable
                 item-key="id"
                 :group="{ name: 'editor', put: true }"
@@ -66,7 +69,20 @@
               </VueDraggable>
             </div>
           </el-main>
-          <el-aside class="rightAside"> </el-aside>
+          <el-aside class="rightAside">
+            <el-tabs stretch v-model="currentTab">
+              <el-tab-pane label="页面配置" name="first">
+                <el-form label-width="100">
+                  <el-form-item label="页面背景色">
+                    <el-radio-group v-model="pageJson.background">
+                      <el-radio-button :label="false">#ffffff</el-radio-button>
+                      <el-radio-button :label="true">#f8f8f8</el-radio-button>
+                    </el-radio-group>
+                  </el-form-item>
+                </el-form>
+              </el-tab-pane>
+            </el-tabs>
+          </el-aside>
         </el-container>
       </el-main>
     </el-container>
@@ -86,8 +102,13 @@ import {
   form2,
   form3,
   form4,
+  form5,
   title1,
-  title2
+  title2,
+  gird1,
+  nav1,
+  nav2,
+  goods1
 } from "@/components/uniapp/index";
 export default defineComponent({
   components: {
@@ -97,13 +118,21 @@ export default defineComponent({
     form2,
     form3,
     form4,
+    form5,
     title1,
-    title2
+    title2,
+    gird1,
+    nav1,
+    nav2,
+    goods1
   },
   setup() {
     let typeId = ref(); //最左侧选中样式的id
     let detailList = ref<IDMChildren[]>([]); //左侧选中样式下面的子样式列表
     let editorJson = ref<IDetailConfig[]>([]); //中间部分的json
+    let pageJson = ref({
+      background: false
+    });
     const changeDetailList = (id: number) => {
       detailList.value = _.cloneDeep(
         detailMenu.filter((item) => {
@@ -126,6 +155,7 @@ export default defineComponent({
     const end = (e: any) => {
       console.log(e);
     };
+    const currentTab = ref("first");
     //当前选中的组件索引
     let currentComponent = ref(0);
     changeType(1);
@@ -140,7 +170,9 @@ export default defineComponent({
       editorJson,
       add,
       currentComponent,
-      end
+      end,
+      currentTab,
+      pageJson
     };
   }
 });
@@ -221,6 +253,9 @@ export default defineComponent({
           display: flex;
           align-items: center;
           justify-content: center;
+          .editorHas {
+            background-color: $background !important;
+          }
           .editor {
             width: 375px;
             height: calc(100% - 40px);
@@ -260,5 +295,8 @@ export default defineComponent({
 }
 .activeComponent {
   // border: 2px dashed $color;
+}
+::v-deep .el-tabs__content {
+  padding: 0 15px;
 }
 </style>

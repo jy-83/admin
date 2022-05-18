@@ -2,7 +2,7 @@
  * @Author: jiangyi 189363638@qq.com
  * @Date: 2022-05-12 09:37:00
  * @LastEditors: jiangyi 189363638@qq.com
- * @LastEditTime: 2022-05-16 17:25:42
+ * @LastEditTime: 2022-05-17 11:21:51
  * @FilePath: /admin/src/views/uniapp/config.ts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -19,6 +19,18 @@ export const typeMenu: ItypeMenu[] = [
   {
     name: "标题",
     id: 3
+  },
+  {
+    name: "栅格布局",
+    id: 4
+  },
+  {
+    name: "导航",
+    id: 5
+  },
+  {
+    name: "商品",
+    id: 6
   }
 ];
 
@@ -50,6 +62,10 @@ export const detailMenu: IDetailMenu[] = [
       {
         id: 14,
         preview: require("@/assets/uniapp/preview/form4.png")
+      },
+      {
+        id: 15,
+        preview: require("@/assets/uniapp/preview/form5.png")
       }
     ]
   },
@@ -63,6 +79,37 @@ export const detailMenu: IDetailMenu[] = [
       {
         id: 32,
         preview: require("@/assets/uniapp/preview/title2.png")
+      }
+    ]
+  },
+  {
+    id: 4,
+    children: [
+      {
+        id: 41,
+        preview: require("@/assets/uniapp/preview/gird1.png")
+      }
+    ]
+  },
+  {
+    id: 5,
+    children: [
+      {
+        id: 51,
+        preview: require("@/assets/uniapp/preview/nav1.png")
+      },
+      {
+        id: 52,
+        preview: require("@/assets/uniapp/preview/nav1.png")
+      }
+    ]
+  },
+  {
+    id: 6,
+    children: [
+      {
+        id: 61,
+        preview: require("@/assets/uniapp/preview/nav1.png")
       }
     ]
   }
@@ -90,11 +137,31 @@ export const detailConfig: IDetailConfig[] = [
     name: "form4"
   },
   {
+    id: 15,
+    name: "form5"
+  },
+  {
     id: 31,
     name: "title1"
   },
   {
     id: 32,
     name: "title2"
+  },
+  {
+    id: 41,
+    name: "gird1"
+  },
+  {
+    id: 51,
+    name: "nav1"
+  },
+  {
+    id: 52,
+    name: "nav2"
+  },
+  {
+    id: 61,
+    name: "goods1"
   }
 ];

@@ -28,8 +28,8 @@ export default defineComponent({
   display: flex;
   align-items: baseline;
   border-bottom: 1px solid $color-border;
-  padding: $default 0;
-  margin: 0 $default;
+  padding: $distance 0;
+  margin: 0 $distance;
   .label {
     width: 100px;
   }

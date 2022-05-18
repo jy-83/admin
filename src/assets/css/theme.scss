@@ -5,11 +5,19 @@ $color-tip: #999; //注释
 $color: #2e82ff; //主题色
 $color-border: #eee; //边框颜色
 $background: #f8f8f8; //背景色
+$color-white: #fff;
 
 // 边距相关
-$default: 15px;
+$distance: 15px;
+$distance-medium: 10px;
+$distance-sm: 5px;
+
 // 字体大小
 $font-sm: 10px;
 $font-base: 12px;
 $font-medium: 14px;
 $font-lg: 16px;
+//圆角
+$radius: 15px;
+$radius-medium: 10px;
+$radius-sm: 5px;

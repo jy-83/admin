@@ -31,8 +31,8 @@ export default defineComponent({
 .form4 {
   display: flex;
   align-items: center;
-  padding: $default 0;
-  margin: 0 $default;
+  padding: $distance 0;
+  margin: 0 $distance;
   justify-content: space-between;
   border-bottom: 1px solid $color-border;
   .label {

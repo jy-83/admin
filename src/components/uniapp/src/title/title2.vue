@@ -30,7 +30,7 @@ export default defineComponent({
 .title2 {
   display: flex;
   align-items: center;
-  padding: $default;
+  padding: $distance;
   justify-content: space-between;
   .text {
     font-size: $font-lg;

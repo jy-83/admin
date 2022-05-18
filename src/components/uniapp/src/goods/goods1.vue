@@ -1,15 +1,13 @@
 <!--
  * @Author: jiangyi 189363638@qq.com
- * @Date: 2022-05-16 17:00:02
+ * @Date: 2022-05-17 11:02:09
  * @LastEditors: jiangyi 189363638@qq.com
- * @LastEditTime: 2022-05-16 17:18:14
- * @FilePath: /admin/src/components/uniapp/src/title/title1.vue
+ * @LastEditTime: 2022-05-17 11:04:38
+ * @FilePath: /admin/src/components/uniapp/src/goods/goods1.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
 <template>
-  <div class="title1">
-    <span class="text">我是标题</span>
-  </div>
+  <div>商品</div>
 </template>
 
 <script lang="ts">
@@ -22,15 +20,4 @@ export default defineComponent({
 });
 </script>
 
-<style scoped lang="scss">
-.title1 {
-  display: flex;
-  align-items: center;
-  padding: $distance;
-  .text {
-    font-size: $font-lg;
-    color: $color-title;
-    font-weight: 500;
-  }
-}
-</style>
+<style scoped></style>
