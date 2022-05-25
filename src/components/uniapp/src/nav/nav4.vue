@@ -1,22 +1,21 @@
 <!--
  * @Author: jiangyi 189363638@qq.com
- * @Date: 2022-05-17 11:10:29
+ * @Date: 2022-05-25 14:49:36
  * @LastEditors: jiangyi 189363638@qq.com
- * @LastEditTime: 2022-05-25 14:45:42
- * @FilePath: /admin/src/components/uniapp/src/nav/nav2.vue
+ * @LastEditTime: 2022-05-25 15:38:14
+ * @FilePath: /admin/src/components/uniapp/src/nav/nav4.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
 <template>
-  <div class="nav2 scrollX scroll" :id="id">
+  <div class="nav4 scrollY scroll" :id="id">
+    <span class="border"></span>
     <span
-      class="item"
       v-for="(item, index) in 10"
       :class="{ active: current == index }"
       :key="index"
       @click="handleClick($event, index)"
       >导航{{ index }}</span
     >
-    <span class="border"></span>
   </div>
 </template>
 
@@ -25,34 +24,32 @@ import { defineComponent, ref, nextTick } from "vue";
 
 export default defineComponent({
   setup() {
-    const id = `tabs${new Date().getTime()}`;
     const current = ref(0);
-    //点击切换事件
+    const id = `tab${new Date().getTime()}`;
     const handleClick = (e: any, index: number) => {
       current.value = index;
       e.target.scrollIntoView({
-        inline: "center",
+        block: "center",
         behavior: "smooth"
       });
       nextTick(() => {
-        getLeft();
+        getTop();
       });
     };
-    //下方border位置计算
-    const getLeft = () => {
+    const getTop = () => {
       let activeChild = document.querySelector(
         `#${id} .active`
       ) as HTMLSpanElement;
       let border = document.querySelector(`#${id} .border`) as HTMLSpanElement;
       border.setAttribute(
         "style",
-        `left:${activeChild.offsetLeft}px;transform:translateX(${
-          (activeChild.clientWidth - border.clientWidth) / 2
+        `top:${activeChild.offsetTop}px;transform:translateY(${
+          (activeChild.clientHeight - border.clientHeight) / 2
         }px)`
       );
     };
     nextTick(() => {
-      getLeft();
+      getTop();
     });
     return {
       current,
@@ -64,14 +61,17 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-.nav2 {
+.nav4 {
+  width: 85px;
+  height: 300px;
   display: flex;
-  align-items: center;
-  height: 41px;
+  flex-direction: column;
+  background-color: $color-white;
   position: relative;
-  .item {
-    padding: 0 15px;
-    white-space: nowrap;
+  span {
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
     cursor: pointer;
     &.active {
       color: $color;
@@ -79,13 +79,12 @@ export default defineComponent({
   }
   .border {
     position: absolute;
-    width: 20px;
-    transition-duration: 300ms;
-    height: 3px;
-    background-color: rgb(60, 156, 255);
-    bottom: 3px;
+    width: 4px;
+    height: 25px;
+    background-color: $color;
     left: 0;
     border-radius: 2px;
+    transition-duration: 300ms;
   }
 }
 </style>

@@ -14,7 +14,7 @@
         <el-container class="containerChild">
           <el-aside class="leftAside">
             <el-container>
-              <el-aside class="typeMenu">
+              <el-aside class="typeMenu scroll">
                 <ul>
                   <li
                     v-for="item in typeMenu"
@@ -26,7 +26,7 @@
                   </li>
                 </ul>
               </el-aside>
-              <el-container class="detailMenu scroll">
+              <el-container class="detailMenu scrollY scroll">
                 <ul>
                   <VueDraggable
                     v-model="detailList"
@@ -50,7 +50,7 @@
           </el-aside>
           <el-main class="mainChild">
             <div
-              class="editor scroll"
+              class="editor scrollY scroll"
               :class="{ editorHas: pageJson.background }"
             >
               <VueDraggable
@@ -108,6 +108,8 @@ import {
   gird1,
   nav1,
   nav2,
+  nav3,
+  nav4,
   goods1
 } from "@/components/uniapp/index";
 export default defineComponent({
@@ -124,6 +126,8 @@ export default defineComponent({
     gird1,
     nav1,
     nav2,
+    nav3,
+    nav4,
     goods1
   },
   setup() {
@@ -273,26 +277,7 @@ export default defineComponent({
     }
   }
 }
-.scroll {
-  overflow-y: auto;
-}
-//滚动条样式-start
-.scroll::-webkit-scrollbar {
-  width: 0;
-  height: 0;
-}
-.scroll::-webkit-scrollbar-track {
-  background-color: #f2f2f2;
-  -webkit-border-radius: 2em;
-  -moz-border-radius: 2em;
-  border-radius: 2em;
-}
-.scroll::-webkit-scrollbar-thumb {
-  background-color: #191919;
-  -webkit-border-radius: 2em;
-  -moz-border-radius: 2em;
-  border-radius: 2em;
-}
+
 .activeComponent {
   // border: 2px dashed $color;
 }
