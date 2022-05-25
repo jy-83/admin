@@ -2,7 +2,7 @@
  * @Author: jiangyi 189363638@qq.com
  * @Date: 2022-05-12 09:37:00
  * @LastEditors: jiangyi 189363638@qq.com
- * @LastEditTime: 2022-05-25 15:39:47
+ * @LastEditTime: 2022-05-25 16:19:40
  * @FilePath: /admin/src/views/uniapp/config.ts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -117,7 +117,7 @@ export const detailMenu: IDetailMenu[] = [
     children: [
       {
         id: 61,
-        preview: require("@/assets/uniapp/preview/nav1.png")
+        preview: require("@/assets/uniapp/preview/goods1.png")
       }
     ]
   }
