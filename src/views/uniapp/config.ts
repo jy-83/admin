@@ -2,7 +2,7 @@
  * @Author: jiangyi 189363638@qq.com
  * @Date: 2022-05-12 09:37:00
  * @LastEditors: jiangyi 189363638@qq.com
- * @LastEditTime: 2022-05-25 16:19:40
+ * @LastEditTime: 2022-06-06 16:05:56
  * @FilePath: /admin/src/views/uniapp/config.ts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -31,6 +31,14 @@ export const typeMenu: ItypeMenu[] = [
   {
     name: "商品",
     id: 6
+  },
+  {
+    name: "上传附件",
+    id: 7
+  },
+  {
+    name: "按钮",
+    id: 8
   }
 ];
 
@@ -79,6 +87,10 @@ export const detailMenu: IDetailMenu[] = [
       {
         id: 32,
         preview: require("@/assets/uniapp/preview/title2.png")
+      },
+      {
+        id: 33,
+        preview: require("@/assets/uniapp/preview/title3.png")
       }
     ]
   },
@@ -118,8 +130,37 @@ export const detailMenu: IDetailMenu[] = [
       {
         id: 61,
         preview: require("@/assets/uniapp/preview/goods1.png")
+      },
+      {
+        id: 62,
+        preview: require("@/assets/uniapp/preview/goods2.png")
       }
     ]
+  },
+  {
+    id: 7,
+    children: [
+      {
+        id: 71,
+        preview: require("@/assets/uniapp/preview/upload1.png")
+      },
+      {
+        id: 72,
+        preview: require("@/assets/uniapp/preview/upload2.png")
+      },
+      {
+        id: 73,
+        preview: require("@/assets/uniapp/preview/upload3.png")
+      },
+      {
+        id: 74,
+        preview: require("@/assets/uniapp/preview/upload4.png")
+      }
+    ]
+  },
+  {
+    id: 8,
+    children: []
   }
 ];
 
@@ -157,6 +198,10 @@ export const detailConfig: IDetailConfig[] = [
     name: "title2"
   },
   {
+    id: 33,
+    name: "title3"
+  },
+  {
     id: 41,
     name: "gird1"
   },
@@ -179,5 +224,25 @@ export const detailConfig: IDetailConfig[] = [
   {
     id: 61,
     name: "goods1"
+  },
+  {
+    id: 62,
+    name: "goods2"
+  },
+  {
+    id: 71,
+    name: "upload1"
+  },
+  {
+    id: 72,
+    name: "upload2"
+  },
+  {
+    id: 73,
+    name: "upload3"
+  },
+  {
+    id: 74,
+    name: "upload4"
   }
 ];

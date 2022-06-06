@@ -1,18 +1,14 @@
 <!--
  * @Author: jiangyi 189363638@qq.com
- * @Date: 2022-05-16 17:18:29
+ * @Date: 2022-06-06 11:06:44
  * @LastEditors: jiangyi 189363638@qq.com
- * @LastEditTime: 2022-06-06 11:08:28
- * @FilePath: /admin/src/components/uniapp/src/title/title2.vue
+ * @LastEditTime: 2022-06-06 11:14:09
+ * @FilePath: /admin/src/components/uniapp/src/title/title3.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
 <template>
-  <div class="title2">
+  <div class="title3">
     <span class="text">我是标题</span>
-    <div class="more">
-      <span class="tip">更多</span>
-      <el-icon><ArrowRightBold /></el-icon>
-    </div>
   </div>
 </template>
 
@@ -27,24 +23,24 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-.title2 {
+.title3 {
+  padding: $distance;
   display: flex;
   align-items: center;
-  padding: $distance;
-  justify-content: space-between;
   .text {
     font-size: $font-lg;
     color: $color-title;
     font-weight: 500;
-  }
-  .more {
-    display: flex;
-    align-items: center;
-    .tip {
-      color: $color-tip;
-    }
-    .el-icon {
-      color: $color-tip;
+    position: relative;
+    padding-left: $distance-medium;
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 2px;
+      height: 100%;
+      background-color: $color;
     }
   }
 }

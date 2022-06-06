@@ -21,3 +21,10 @@ $font-lg: 16px;
 $radius: 15px;
 $radius-medium: 10px;
 $radius-sm: 5px;
+// 文本溢出隐藏
+@mixin line($i) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $i;
+}

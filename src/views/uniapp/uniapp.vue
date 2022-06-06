@@ -96,39 +96,11 @@ import { typeMenu, detailMenu, detailConfig } from "./config";
 import { IDMChildren, IDetailConfig } from "./type";
 import _ from "lodash";
 import VueDraggable from "vuedraggable";
-import {
-  swiper1,
-  form1,
-  form2,
-  form3,
-  form4,
-  form5,
-  title1,
-  title2,
-  gird1,
-  nav1,
-  nav2,
-  nav3,
-  nav4,
-  goods1
-} from "@/components/uniapp/index";
+import components from "@/components/uniapp";
 export default defineComponent({
   components: {
     VueDraggable,
-    swiper1,
-    form1,
-    form2,
-    form3,
-    form4,
-    form5,
-    title1,
-    title2,
-    gird1,
-    nav1,
-    nav2,
-    nav3,
-    nav4,
-    goods1
+    ...components
   },
   setup() {
     let typeId = ref(); //最左侧选中样式的id
