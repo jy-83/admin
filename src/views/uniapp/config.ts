@@ -2,7 +2,7 @@
  * @Author: jiangyi 189363638@qq.com
  * @Date: 2022-05-12 09:37:00
  * @LastEditors: jiangyi 189363638@qq.com
- * @LastEditTime: 2022-06-06 16:05:56
+ * @LastEditTime: 2022-06-07 10:34:45
  * @FilePath: /admin/src/views/uniapp/config.ts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -160,7 +160,32 @@ export const detailMenu: IDetailMenu[] = [
   },
   {
     id: 8,
-    children: []
+    children: [
+      {
+        id: 81,
+        preview: require("@/assets/uniapp/preview/button1.png")
+      },
+      {
+        id: 82,
+        preview: require("@/assets/uniapp/preview/button2.png")
+      },
+      {
+        id: 83,
+        preview: require("@/assets/uniapp/preview/button3.png")
+      },
+      {
+        id: 84,
+        preview: require("@/assets/uniapp/preview/button4.png")
+      },
+      {
+        id: 85,
+        preview: require("@/assets/uniapp/preview/button5.png")
+      },
+      {
+        id: 86,
+        preview: require("@/assets/uniapp/preview/button6.png")
+      }
+    ]
   }
 ];
 
@@ -244,5 +269,29 @@ export const detailConfig: IDetailConfig[] = [
   {
     id: 74,
     name: "upload4"
+  },
+  {
+    id: 81,
+    name: "button1"
+  },
+  {
+    id: 82,
+    name: "button2"
+  },
+  {
+    id: 83,
+    name: "button3"
+  },
+  {
+    id: 84,
+    name: "button4"
+  },
+  {
+    id: 85,
+    name: "button5"
+  },
+  {
+    id: 86,
+    name: "button6"
   }
 ];

@@ -49,16 +49,14 @@
             </el-container>
           </el-aside>
           <el-main class="mainChild">
-            <div
-              class="editor scrollY scroll"
-              :class="{ editorHas: pageJson.background }"
-            >
+            <div class="editor" :class="{ editorHas: pageJson.background }">
               <VueDraggable
                 item-key="id"
                 :group="{ name: 'editor', put: true }"
-                style="height: 100%"
+                class="scrollY scroll editorPhone"
                 @add.prevent="add"
                 v-model="editorJson"
+                :class="{ hasFixedButton: index !== -1 }"
                 @end="end"
               >
                 <template #item="{ element, index }">
@@ -90,7 +88,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "vue";
+import { defineComponent, ref, computed } from "vue";
 import { DeleteFilled, Download, FolderAdd } from "@element-plus/icons-vue";
 import { typeMenu, detailMenu, detailConfig } from "./config";
 import { IDMChildren, IDetailConfig } from "./type";
@@ -108,6 +106,20 @@ export default defineComponent({
     let editorJson = ref<IDetailConfig[]>([]); //中间部分的json
     let pageJson = ref({
       background: false
+    });
+    // 是否有固定在底部的按钮
+    const index = computed(() => {
+      let index = editorJson.value.findIndex((item) => {
+        if (
+          item.name === "button4" ||
+          item.name === "button5" ||
+          item.name === "button6"
+        ) {
+          return item;
+        }
+      });
+      console.log(index);
+      return index;
     });
     const changeDetailList = (id: number) => {
       detailList.value = _.cloneDeep(
@@ -129,7 +141,7 @@ export default defineComponent({
       }
     };
     const end = (e: any) => {
-      console.log(e);
+      console.log(editorJson.value);
     };
     const currentTab = ref("first");
     //当前选中的组件索引
@@ -148,7 +160,8 @@ export default defineComponent({
       currentComponent,
       end,
       currentTab,
-      pageJson
+      pageJson,
+      index
     };
   }
 });
@@ -234,12 +247,18 @@ export default defineComponent({
           }
           .editor {
             width: 375px;
-            height: calc(100% - 40px);
+            height: calc(100vh - 100px);
             background: #fff;
-            overflow-y: auto;
             box-shadow: var(--el-box-shadow-lighter);
             list-style: none;
-
+            position: relative;
+            .editorPhone {
+              height: calc(100vh - 100px);
+              box-sizing: border-box;
+              &.hasFixedButton {
+                padding-bottom: 80px;
+              }
+            }
             image {
               width: 375px;
             }
