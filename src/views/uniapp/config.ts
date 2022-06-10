@@ -1,11 +1,3 @@
-/*
- * @Author: jiangyi 189363638@qq.com
- * @Date: 2022-05-12 09:37:00
- * @LastEditors: jiangyi 189363638@qq.com
- * @LastEditTime: 2022-06-07 10:34:45
- * @FilePath: /admin/src/views/uniapp/config.ts
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
- */
 import { ItypeMenu, IDetailMenu, IDetailConfig } from "./type";
 export const typeMenu: ItypeMenu[] = [
   {
@@ -39,6 +31,10 @@ export const typeMenu: ItypeMenu[] = [
   {
     name: "按钮",
     id: 8
+  },
+  {
+    name: "搜索",
+    id: 9
   }
 ];
 
@@ -186,6 +182,19 @@ export const detailMenu: IDetailMenu[] = [
         preview: require("@/assets/uniapp/preview/button6.png")
       }
     ]
+  },
+  {
+    id: 9,
+    children: [
+      {
+        id: 91,
+        preview: require("@/assets/uniapp/preview/search1.png")
+      },
+      {
+        id: 92,
+        preview: require("@/assets/uniapp/preview/search2.png")
+      }
+    ]
   }
 ];
 
@@ -293,5 +302,13 @@ export const detailConfig: IDetailConfig[] = [
   {
     id: 86,
     name: "button6"
+  },
+  {
+    id: 91,
+    name: "search1"
+  },
+  {
+    id: 92,
+    name: "search2"
   }
 ];

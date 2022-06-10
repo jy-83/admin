@@ -141,7 +141,7 @@ export default defineComponent({
       }
     };
     const end = (e: any) => {
-      console.log(editorJson.value);
+      console.log(e);
     };
     const currentTab = ref("first");
     //当前选中的组件索引
